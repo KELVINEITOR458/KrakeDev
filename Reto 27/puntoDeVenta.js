@@ -82,5 +82,36 @@ limpiar=function(){
         Dejar todos los textos de los montos con el valor 0.0
         Si funciona, hacer un commit
      */
+
+    let limpiarPrecio;
+    limpiarPrecio = 0.0;
+    let limpiarProducto;
+    limpiarProducto = " ";
+    let limpiarCantidad;
+    limpiarCantidad = 0;
+    let limpiarDescuento;
+    limpiarDescuento = 0;
+
+    let limpiarLblSubTotal;
+    limpiarLblSubTotal = " ";
+    let limpiarLblDescuento;
+    limpiarLblDescuento = " ";
+    let limpiarlblIVA;
+    limpiarlblIVA = " ";
+    let limpiarLblTotal;
+    limpiarLblTotal = " ";
+    let limpiarResumen;
+    limpiarResumen = " ";
+
+
+    mostrarTextoEnCaja("txtPrecio", limpiarPrecio);
+    mostrarTextoEnCaja("txtProducto", limpiarProducto);
+    mostrarTextoEnCaja("txtCantidad", limpiarCantidad);
+    mostrarTextoEnCaja("txtPorcentajeDescuento", limpiarDescuento);
+    mostrarTexto("lblSubtotal", limpiarLblSubTotal);
+    mostrarTexto("lblDescuento", limpiarLblDescuento);
+    mostrarTexto("lblValorIVA", limpiarlblIVA);
+    mostrarTexto("lblTotal", limpiarLblTotal);
+    mostrarTexto("lblResumen", limpiarResumen);
 }
 /* SI TODO FUNCIONA, HACER UN PUSH */
