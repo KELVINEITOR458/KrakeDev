@@ -35,4 +35,9 @@ recuperarFloat = function(idComponente){
     return valorFlotante;
  }
 
+cambiarGif = function(idImagen, imagenCambio){
+     let cmpImagenSaludo;
+     cmpImagenSaludo = document.getElementById(idImagen);
+     cmpImagenSaludo.src = imagenCambio;
+}
 

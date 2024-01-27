@@ -11,5 +11,11 @@ calcularPromedioNotas = function(){
     promedio = calcularPromedio(nota1, nota2, nota3);
     promedioRedondeado = promedio.toFixed(2);
 
-    mostrarTexto("lblPromedio", promedioRedondeado);
+    mostrarTexto("lblPromedio", "Su promedio es: " + promedioRedondeado);
+
+    if(promedioRedondeado > 7){
+        cambiarGif("imgResultado", "imagenes/bien.gif");
+    } else {
+        cambiarGif("imgResultado", "imagenes/mal.gif")
+    }
 }
