@@ -20,7 +20,7 @@ calcularValorTotal = function(){
     //4. Invocar a calcularSubtotal y el retorno guardar en la variable valorSubtotal
     valorSubtotal = calcularSubtotal(cantidad, precioProducto);
     //5. Mostrar valorSubtotal en el componente lblSubtotal
-    mostrarTexto("lblSubtotal", valorSubtotal)
+    mostrarTexto("lblSubtotal", valorSubtotal);
     
         /*
             Caso de prueba: 
@@ -29,7 +29,9 @@ calcularValorTotal = function(){
             Si el caso de prueba es exitoso, hacer un commit
          */
     //6. Invocar a calcularDescuento y lo que devuelve guardar en la variable valorDescuento
+    valorDescuento = calcularValorDescuento(valorSubtotal, porcentajeDescuento);
     //7. Mostrar el resultado en el componente lblDescuento
+    mostrarTexto("lblDescuento", valorDescuento);
         /*
             Caso de prueba: 
                 precioProducto: 5.4  cantidad: 10 descuento: 10
