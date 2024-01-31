@@ -13,9 +13,18 @@ calcularPromedioNotas = function(){
 
     mostrarTexto("lblPromedio", "Su promedio es: " + promedioRedondeado);
 
-    if(promedioRedondeado > 7){
+    if(promedioRedondeado < 5 && promedioRedondeado > 0){
+        cambiarGif("imgResultado", "imagenes/mal.gif");
+        mostrarTexto("frase", "REPROBADO");
+    } else if(promedioRedondeado >= 5 && promedioRedondeado <= 8) {
+        cambiarGif("imgResultado", "imagenes/normal.gif");
+        mostrarTexto("frase", "BUEN TRABAJO");
+    } else if(promedioRedondeado > 8 && promedioRedondeado <= 10){
         cambiarGif("imgResultado", "imagenes/bien.gif");
-    } else {
-        cambiarGif("imgResultado", "imagenes/mal.gif")
+        mostrarTexto("frase", "EXCELENTE");
+    }else {
+        cambiarGif("imgResultado", "imagenes/incorrecto.gif");
+        mostrarTexto("frase", "DATOS INCORRECTOS");
+        mostrarTexto("lblPromedio", " ")
     }
 }
