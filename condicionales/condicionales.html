@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="condicionales.js"></script>
+    <script src="utilitariosPro.js"></script>
+</head>
+<body>
+    <h1>Ingreso Anual</h1>
+    <input type="text" id="ingAnual">
+    <input type="button" value="Calcular Tasa" onclick="calcularTasaInteres();">
+    <h3 id="tasaInt"></h3>
+    <hr>
+    <h1>Capacidad De pago</h1>
+    <h2>Edad</h2>
+    <input type="text" id="txtEdad">
+    <h2>Ingresos</h2>
+    <input type="text" id="txtIngresos">
+    <h2>Egresos</h2>
+    <input type="text" id="txtEgresos">
+    <h3 id="lblCapacidad"></h3>
+    <br>
+    <input type="button" value="Calcular Capacidad" onclick="calcularCapacidadPago();">
+    <hr>
+    <h1>Cálculo de Descuento</h1>
+    <h2>Cantidad</h2>
+    <input type="text" id="txtCantidad">
+    <h2>Precio</h2>
+    <input type="text" id="txtPrecio">
+    <input type="button" value="Comprar" onclick="calcularDescuento();">
+    <h3 id="lblDescuento"></h3>
+    <hr>
+    <h1>Categoria del Colesteról</h1>
+    <h2>Nivel de Colesterol</h2>
+    <input type="text" id="txtColesterol">
+    <input type="button" value="Calcular Categoría" onclick="determinarColesterolDLD();">
+    <h3 id="categoria"></h3>
+    <h3 id="nivel"></h3>
+    <hr>
+    <h1>Contraseña</h1>
+    <h2>Ingrese su contraseña en Letras</h2>
+    <input type="text" id="password">
+    <input type="button" value="Guardar" onclick="validarClave();">
+    <h3 id="verificar"></h3>
+    <hr>
+    <h1>Ver si es Mayúscula</h1>
+    <h2>Ingrese una letra</h2>
+    <input type="text" id="letra">
+    <input type="button" value="Ver" onclick="esMayuscula();" >
+    <h3 id="idLetra"></h3>
+    <hr>
+    <h1>Ver si es Minúscula</h1>
+    <h2>Ingrese una letra</h2>
+    <input type="text" id="letraMin">
+    <input type="button" value="Ver" onclick="esMinuscula();" >
+    <h3 id="idLetraMin"></h3>
+    <hr>
+    <h1>Ver si es Dígito</h1>
+    <h2>Ingrese un dígito</h2>
+    <input type="text" id="letraDig">
+    <input type="button" value="Ver" onclick="esDigito();" >
+    <h3 id="idLetraDig"></h3>
+    <hr>
+    <h1>Dar Permiso</h1>
+    <h2>Ingrese sus notas en las asignaturas (obtiene el permiso si saca mas de 90 en cualquiera de las 3 asignaturas)</h2>
+    <h2>Mátematicas</h2>
+    <input type="text" id="mate">
+    <h2>Física</h2>
+    <input type="text" id="fisica">
+    <h2>Geometría</h2>
+    <input type="text" id="geometrica">
+    <h3 id="permiso"></h3>
+    <input type="button" value="Verificar" onclick="darPermiso();">
+    <hr>
+    <h1>Otorgar Permiso</h1>
+    <h2>Ingrese sus notas en las asignaturas (obtiene permiso si saca mas de 90 en mate o fisica y mas de 80 en geometría)</h2>
+    <h2>Mátematicas</h2>
+    <input type="text" id="mateOt">
+    <h2>Física</h2>
+    <input type="text" id="fisicaOt">
+    <h2>Geometría</h2>
+    <input type="text" id="geometricaOt">
+    <h3 id="permisoOt"></h3>
+    <input type="button" value="Verificar" onclick="otorgarPermiso();">
+    <hr>
+    <h1>Dejar Salir</h1>
+    <h2>Ingrese sus notas en las asignaturas (Le deja salir si saca mas de 90 en mate, fisica o geometria y ademas si la nota de fisica es mayor a la de mate)</h2>
+    <h2>Mátematicas</h2>
+    <input type="text" id="mateIn">
+    <h2>Física</h2>
+    <input type="text" id="fisicaIn">
+    <h2>Geometría</h2>
+    <input type="text" id="geometricaIn">
+    <h3 id="permisoIn"></h3>
+    <input type="button" value="Verificar" onclick="dejarSalir();">
+</body>
+</html>
