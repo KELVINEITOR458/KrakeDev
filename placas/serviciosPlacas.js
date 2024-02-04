@@ -193,3 +193,34 @@ obtenerDiaPicoYPlaca = function(placa){
     }
     return !noHayErrores;
 }
+
+obtenerTipoVehiculo = function(placa){
+    let noHayErrores = true;
+    let cmpPlaca;
+    cmpPlaca = recuperarTexto("txtPlaca");
+    placa = cmpPlaca.charCodeAt(1);
+
+    if(placa == 65 || placa == 90){
+        mostrarTexto("vehiculo", "Tipo de Vehículo: COMERCIAL");
+        noHayErrores = true;
+    }else if(placa == 69){
+        mostrarTexto("vehiculo", "Tipo de Vehículo: GUBERNAMENTAL");
+        noHayErrores = true;
+    }else if(placa == 88){
+        mostrarTexto("vehiculo", "Tipo de Vehículo: USO OFICIAL");
+        noHayErrores = true;
+    }else if(placa == 83){
+        mostrarTexto("vehiculo", "Tipo de Vehículo: GOBIERNO PROVINCIAL");
+        noHayErrores = true;
+    }else if(placa == 77){
+        mostrarTexto("vehiculo", "Tipo de Vehículo: MUNICIPAL");
+        noHayErrores = true;
+    }else if(placa == 66 || placa == 67 || placa == 68 || placa == 70 || placa == 71 || placa == 72 || placa == 73 || placa == 74 || placa == 75 || placa == 76 || placa == 78 || placa == 79 || placa == 80 || placa == 81 || placa == 82 || placa == 84 || placa == 85 || placa == 86 || placa == 87 || placa == 89 || placa == 90){
+        mostrarTexto("vehiculo", "Tipo de Vehículo: PARTICULAR");
+        noHayErrores = true;
+    }else{
+        mostrarTexto("vehiculo", "TIPO INCORRECTO");
+        noHayErrores = false;
+    }
+    return !noHayErrores;
+}
