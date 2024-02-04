@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image:url(imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+    width: 500px;
+    position: relative;
+    left: 400px;
+    font-size: 60px;
+    color: rgb(1, 54, 1);
+    text-shadow: 0 0 10px rgb(8, 255, 41);
+}
+
+.relleno{
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    margin-left: 480px;
+    margin-right: 480px;
+    padding: 10px;
+    text-align: center;
+    color: rgb(197, 197, 0);
+    text-shadow: 0 0 5px rgb(208, 255, 0);
+}
+
+.txt{
+    font-size: 20px;
+    border-radius: 10px;
+}
+.validar{
+    color: wheat;
+    font-size: 20px;
+    text-shadow: 0 0 7px white;
+}
+.error-container{
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    backdrop-filter: blur(15px);
+    width: 300px;
+}
+
+.inputs{
+    background-color: transparent;
+    padding: 10px;
+    width: 320px;
+    left: 500px;
+    position: relative;
+}
+
+input[type="button"]{
+    font-size: 15px;
+}
