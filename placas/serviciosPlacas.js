@@ -164,3 +164,32 @@ obtenerProvincia = function(placa){
     }
     return !noHayErrores;
 }
+
+obtenerDiaPicoYPlaca = function(placa){
+    noHayErrores = true;
+    let letra;
+    let ultimaposicion;
+    letra = placa.length -1;
+    ultimaposicion = placa.charAt(letra);
+
+    if(ultimaposicion == 1 || ultimaposicion == 2){
+        mostrarTexto("picoPlaca", "Pico y Placa: LUNES");
+        noHayErrores = true;
+    }else if(ultimaposicion == 3 || ultimaposicion == 4){
+        mostrarTexto("picoPlaca", "Pico y Placa: MARTES");
+        noHayErrores = true;
+    }else if(ultimaposicion == 5 || ultimaposicion == 6){
+        mostrarTexto("picoPlaca", "Pico y Placa: MIÉRCOLES");
+        noHayErrores = true;
+    }else if(ultimaposicion == 7 || ultimaposicion == 8){
+        mostrarTexto("picoPlaca", "Pico y Placa: JUEVES");
+        noHayErrores = true;
+    }else if(ultimaposicion == 9 || ultimaposicion == 0){
+        mostrarTexto("picoPlaca", "Pico y Placa: VIERNES");
+        noHayErrores = true;
+    }else{
+        mostrarTexto("picoPlaca", "INGRESE VALOR CORRECTO");
+        noHayErrores = false;
+    }
+    return !noHayErrores;
+}

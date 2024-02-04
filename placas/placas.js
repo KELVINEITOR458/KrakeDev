@@ -3,11 +3,14 @@ validarPlaca = function(){
     placa = placa = recuperarTexto("txtPlaca");
     let erroresEstructura = validarEstructura(placa);
     let errorProvincia = obtenerProvincia(placa);
-    if(erroresEstructura == false & errorProvincia == false){
+    let pico = obtenerDiaPicoYPlaca(placa);
+
+    if(erroresEstructura == false & errorProvincia == false & pico == false){
         mostrarTexto("lblValidacion", "Placa válida");
     }else{
         mostrarTexto("lblValidacion", "Placa inválida");
         mostrarTexto("provincia", "PROVINCIA INCORRECTA");
+        mostrarTexto("picoPlaca", "INGRESE VALOR CORRECTO");
     }
 
 }
