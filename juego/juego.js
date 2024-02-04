@@ -8,6 +8,9 @@ jugar = function(){
     generar1 = generarElemento();
     generar2 = generarElemento2();
 
+    generarRuta1(generar1);
+    generarRuta2(generar2);
+    
     determinarGanador(generar1, generar2);
 
     if(generar1 == generar2){
