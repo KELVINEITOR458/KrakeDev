@@ -7,23 +7,32 @@
     <script src="utilitariosPro.js"></script>
     <script src="serviciosJuego.js"></script>
     <script src="juego.js"></script>
+    <link rel="stylesheet" href="juego.css">
 </head>
 <body>
     <h1>JUEGA PIEDRA, PAPEL O TIJERAS</h1>
     <br>
-    <h2>Usuario </h2>
-    <h2 id="lblPuntosUsuario">PUNTOS: 0</h2>
-    <h3 id="objeto"></h3>
-    <img src="" id="img1" width="130px">
-    <h2>PC </h2>
-    <h2 id="lblPuntosCompu">PUNTOS: 0</h2>
-    <h3 id="objeto2"></h3>
-    <img src="" id="img2" width="130px">
+    <div class="main-container">
+        <div class="usuario">
+            <h2 class="user">Usuario </h2>
+            <h2 id="lblPuntosUsuario">PUNTOS: 0</h2>
+            <h3 id="objeto"></h3>
+            <img src="" id="img1" width="130px">
+        </div>
+        <div class="compu">
+            <h2 class="user">PC </h2>
+            <h2 id="lblPuntosCompu">PUNTOS: 0</h2>
+            <h3 id="objeto2"></h3>
+            <img src="" id="img2" width="130px">
+        </div>
+    </div>
     <br>
-    <input type="button" value="JUGAR" onclick="jugar();">
-    <input type="button" value="NUEVA PARTIDA" onclick="limpiar();">
+    <div class="botones">
+        <input type="button" value="JUGAR" onclick="jugar();">
+        <input type="button" value="NUEVA PARTIDA" onclick="limpiar();">
+    </div>
     <br>
     <br>
-    <h2 id="ganador"></h2>
+    <h2 id="ganador" class="ganador"></h2>
 </body>
 </html>

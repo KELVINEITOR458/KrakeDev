@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.user{
+    font-size: 30px;
+    color: aquamarine;
+}
+
+h1{
+    font-size: 40px;
+    text-align: center;
+}
+
+.usuario{
+    background-color: rgb(129, 129, 129);
+    border-radius: 10px;
+    padding: 40px;
+    display: inline-block;
+    margin: 20px;
+}
+
+.compu{
+    background-color: rgb(129, 129, 129);
+    border-radius: 10px;
+    padding: 40px;
+    display: inline-block;
+    margin: 20px;
+}
+
+.main-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 410px;
+    display: inline-block;
+}
+
+input[type="button"]{
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 7px;
+    border-style: none;
+}
+
+.botones{
+    padding: 15px;
+    background-color: rgb(80, 80, 80);
+    width: 280px;
+    border-radius: 10px;
+    position: relative;
+    left: 500px;
+}
+
+.ganador{
+    display: inline-block;
+    font-size: 30px;
+    position: relative;
+    left: 500px;
+}
