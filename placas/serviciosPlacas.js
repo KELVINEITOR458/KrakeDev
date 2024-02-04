@@ -82,3 +82,85 @@ validarEstructura = function(placa){
     }
     return !noHayErrores;
 }
+
+obtenerProvincia = function(placa){
+    let noHayErrores = true;
+    let cmpPlaca;
+    cmpPlaca = recuperarTexto("txtPlaca");
+    placa = cmpPlaca.charCodeAt(0);
+
+    if(placa == 65){
+        mostrarTexto("provincia", "Provincia: AZUAY");
+        noHayErrores = true;
+    }else if(placa == 66){
+        mostrarTexto("provincia", "Provincia: BOLÍVAR");
+        noHayErrores = true;
+    }else if(placa == 85){
+        mostrarTexto("provincia", "Provincia: CAÑAR");
+        noHayErrores = true;
+    }else if(placa == 67){
+        mostrarTexto("provincia", "Provincia: CARCHI");
+        noHayErrores = true;
+    }else if(placa == 88){
+        mostrarTexto("provincia", "Provincia: COTOPAXI");
+        noHayErrores = true;
+    }else if(placa == 72){
+        mostrarTexto("provincia", "Provincia: CHIMBORAZO");
+        noHayErrores = true;
+    }else if(placa == 79){
+        mostrarTexto("provincia", "Provincia: EL ORO");
+        noHayErrores = true;
+    }else if(placa == 69){
+        mostrarTexto("provincia", "Provincia: ESMERALDAS");
+        noHayErrores = true;
+    }else if(placa == 87){
+        mostrarTexto("provincia", "Provincia: GALÁPAGOS");
+        noHayErrores = true;
+    }else if(placa == 71){
+        mostrarTexto("provincia", "Provincia: GUAYAS");
+        noHayErrores = true;
+    }else if(placa == 73){
+        mostrarTexto("provincia", "Provincia: IMBABURA");
+        noHayErrores = true;
+    }else if(placa == 76){
+        mostrarTexto("provincia", "Provincia: LOJA");
+        noHayErrores = true;
+    }else if(placa == 82){
+        mostrarTexto("provincia", "Provincia: LOS RÍOS");
+        noHayErrores = true;
+    }else if(placa == 77){
+        mostrarTexto("provincia", "Provincia: MANABÍ");
+        noHayErrores = true;
+    }else if(placa == 86){
+        mostrarTexto("provincia", "Provincia: MORONA SANTIAGO");
+        noHayErrores = true;
+    }else if(placa == 78){
+        mostrarTexto("provincia", "Provincia: NAPO");
+        noHayErrores = true;
+    }else if(placa == 83){
+        mostrarTexto("provincia", "Provincia: PASTAZA");
+        noHayErrores = true;
+    }else if(placa == 80){
+        mostrarTexto("provincia", "Provincia: PICHINCHA");
+        noHayErrores = true;
+    }else if(placa == 75){
+        mostrarTexto("provincia", "Provincia: SUCUMBÍOS");
+        noHayErrores = true;
+    }else if(placa == 81){
+        mostrarTexto("provincia", "Provincia: ORELLANA");
+        noHayErrores = true;
+    }else if(placa == 84){
+        mostrarTexto("provincia", "Provincia: TUNGURAHUA");
+        noHayErrores = true;
+    }else if(placa == 90){
+        mostrarTexto("provincia", "Provincia: ZAMORA CHINCHIPE");
+        noHayErrores = true;
+    }else if(placa == 89){
+        mostrarTexto("provincia", "Provincia: SANTA ELENA");
+        noHayErrores = true;
+    }else{
+        mostrarTexto("provincia", "PROVINCIA INCORRECTA");
+        noHayErrores = false;
+    }
+    return !noHayErrores;
+}
