@@ -1,6 +1,6 @@
 validarPlaca = function(){
     let placa;
-    placa = placa = recuperarTexto("txtPlaca");
+    placa = recuperarTexto("txtPlaca");
     let erroresEstructura = validarEstructura(placa);
     let errorProvincia = obtenerProvincia(placa);
     let pico = obtenerDiaPicoYPlaca(placa);
