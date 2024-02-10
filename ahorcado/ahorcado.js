@@ -6,7 +6,7 @@ esMayuscula = function(caracter){
     let cmpCaracter;
     let charCaracter;
     cmpCaracter = document.getElementById("txtSecreta");
-    charCaracter = cmpCaracter.charAt(0);
+    charCaracter = cmpCaracter.charCodeAt(0);
     caracter = charCaracter;
     if(caracter >= 65 && caracter <= 90){
         return true;
@@ -65,4 +65,30 @@ mostrarLetra = function(letra, posicion){
     }
 }
 
+
+validar = function(letra){
+    let letrasEncontradas = 0;
+    let char;
+
+    for(let i=0; i < palabraSecreta.length; i++){
+        char = palabraSecreta.charAt(i);
+        if(char === letra){
+            mostrarLetra(letra, i);
+            letrasEncontradas = letrasEncontradas + 1;
+        }
+    }
+}
+
+ingresarLetra = function(){
+    let letras;
+    cmpLetra = recuperarTexto("txtLetra");
+    letras = cmpLetra.charCodeAt(0);
+    
+
+    if(letras >= 65 && letras <= 90){
+        validar(cmpLetra);
+    }else{
+        alert("Debe ingresar una mayúscula");
+    }
+}
 
