@@ -1,6 +1,7 @@
 let empleados = [
     {cedula:"1714616123",nombre:"John",apellido:"Cena",sueldo:500.0},
-    {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0}
+    {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0},
+    {cedula:"1727039917",nombre:"Kelvin",apellido:"Bermeo",sueldo:1200.0}
 ]
 
 mostrarOpcionEmpleado = function(){
