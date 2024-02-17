@@ -13,6 +13,7 @@ mostrarOpcionEmpleado = function(){
     deshabilitarComponente("txtNombre");
     deshabilitarComponente("txtApellido");
     deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 
 }
 
@@ -53,6 +54,138 @@ mostrarEmpleados = function(){
 let esNuevo = false;
 
 ejecutarNuevo = function(){
+    habilitarComponente("txtCedula");
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    habilitarComponente("btnGuardar");
+
     esNuevo = true;
+}
+
+buscarEmpleado = function(cedula){
+    let elementoCedula;
+    let cedulaEncontrada = null;
+    for(let i=0; i < empleados.length; i++){
+        elementoCedula = empleados[i];
+        if(elementoCedula.cedula == cedula){
+            cedulaEncontrada = elementoCedula;
+            break;
+        }else{
+            cedulaEncontrada = null;
+        }
+    }
+    return cedulaEncontrada;
+}
+
+agregarEmpleado = function(empleado){
+    let resultado;
+    resultado = buscarEmpleado(empleado.cedula);
+    if(resultado == null){
+        empleados.push(empleado);
+        
+        return true;
+    }else{
+        alert("YA EXISTE EL EMPLEADO CON CEDULA: " + empleado.cedula);
+        return false;
+    }
+}
+
+guardar = function(){
+    let nombreReal = false;
+    let apellidoReal = false;
+    let cedulaReal = false;
+    let sueldoReal = false;
+
+    let cmpCedula;
+    cmpCedula = recuperarTexto("txtCedula");
+    let cedulaCant;
+    cedulaCant = cmpCedula.length;
+    let cedulaDig;
+    cedulaDig = digito(cedulaCant, cmpCedula);
+    if(cedulaCant == 10 && cedulaDig == true){
+        mostrarTexto("lblErrorCedula", "");
+        cedulaReal = true;
+    }else{
+        mostrarTexto("lblErrorCedula", "Debe contener 10 caracteres y todos deben ser digitos");
+        cedulaReal = false;
+    }
+
+    let cmpNombre;
+    let cmpApellido;
+    let nombreCant;
+    let apellidoCant;
+    let mayusNombre;
+    let mayusApellido;
+    cmpNombre = recuperarTexto("txtNombre");
+    cmpApellido = recuperarTexto("txtApellido");
+    nombreCant = cmpNombre.length;
+    apellidoCant = cmpApellido.length;
+    mayusNombre = mayuscula(nombreCant, cmpNombre);
+    mayusApellido = mayuscula(apellidoCant, cmpApellido);
+    if(nombreCant >= 3 && mayusNombre ==true){
+        mostrarTexto("lblErrorNombre", "");
+        nombreReal = true;
+    }else{
+        mostrarTexto("lblErrorNombre", "El nombre debe tener almenos 3 caracteres y deben ser mayusculas");
+        nombreReal = false;
+    }
+    if(apellidoCant >= 3 && mayusApellido == true){
+        mostrarTexto("lblErrorApellido", "");
+        apellidoReal = true;
+    }else{
+        mostrarTexto("lblErrorApellido", "El apellido debe tener almenos 3 caracteres y deben ser mayusculas");
+        apellidoReal = false;
+    }
+
+    let sueldoFloat;
+    sueldoFloat = recuperarFloat("txtSueldo");
+
+    if(sueldoFloat >= 400 && sueldoFloat <= 5000){
+        mostrarTexto("lblErrorSueldo", "");
+        sueldoReal = true;
+    }else{
+        mostrarTexto("lblErrorSueldo", "El sueldo debe ser entre 400 y 5000");
+        sueldoReal = false;
+    }
+
+
+    if(esNuevo == true && nombreReal == true && apellidoReal == true && cedulaReal == true && sueldoReal == true){
+        empleados.cedula = cmpCedula;
+        empleados.nombre = cmpNombre;
+        empleados.apellido = cmpApellido;
+        empleados.sueldo = sueldoFloat;
+
+        let empleadoNuevo;
+        empleadoNuevo = agregarEmpleado(empleados);
+        if(empleadoNuevo == true){
+            alert("EMPLEADO GUARDADO CORRECTAMENTE");
+            mostrarEmpleados();
+        }
+    }
     
+}
+
+mayuscula = function(caracter, txt){
+    let mayus;
+        for(let i=0; i< caracter; i++){
+            mayus= txt.charCodeAt(i);
+            if(mayus >= 65 && mayus <= 90){
+                return true;
+            }else{
+                return false;
+            }
+        }
+}
+
+digito = function(caracter, txt){
+    let digit;
+        for(let i=0; i< caracter; i++){
+            digit= txt.charCodeAt(i);
+            if(digit >= 48 && digit <= 57){
+                return true;
+            }else{
+                return false;
+            }
+        }
 }
