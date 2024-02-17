@@ -28,6 +28,8 @@ modificarCliente = function(cliente){
         clienteEncontrado.nombre = cliente.nombre;
         clienteEncontrado.edad = cliente.edad;
     }
+
+    
 }
 
 ejecutarBusqueda = function(){

@@ -146,10 +146,6 @@ guardar = function(){
             alert("EMPLEADO GUARDADO CORRECTAMENTE");
             mostrarEmpleados();
             deshabilitarComponentes();
-            mostrarTextoEnCaja("txtCedula", "");
-            mostrarTextoEnCaja("txtNombre", "");
-            mostrarTextoEnCaja("txtApellido", "");
-            mostrarTextoEnCaja("txtSueldo", "");
             
 
         }
@@ -246,4 +242,13 @@ buscarEmpleado = function(cedula){
         }
     }
     return cedulaEncontrada;
+}
+
+limpiar = function(){
+    deshabilitarComponentes();
+    mostrarTextoEnCaja("txtCedula", "");
+    mostrarTextoEnCaja("txtNombre", "");
+    mostrarTextoEnCaja("txtApellido", "");
+    mostrarTextoEnCaja("txtSueldo", "");
+    esNuevo = false;
 }
