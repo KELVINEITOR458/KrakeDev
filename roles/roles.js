@@ -59,20 +59,7 @@ ejecutarNuevo = function(){
     esNuevo = true;
 }
 
-buscarEmpleado = function(cedula){
-    let elementoCedula;
-    let cedulaEncontrada = null;
-    for(let i=0; i < empleados.length; i++){
-        elementoCedula = empleados[i];
-        if(elementoCedula.cedula == cedula){
-            cedulaEncontrada = elementoCedula;
-            break;
-        }else{
-            cedulaEncontrada = null;
-        }
-    }
-    return cedulaEncontrada;
-}
+
 
 agregarEmpleado = function(empleado){
     let resultado;
@@ -163,8 +150,18 @@ guardar = function(){
             mostrarTextoEnCaja("txtNombre", "");
             mostrarTextoEnCaja("txtApellido", "");
             mostrarTextoEnCaja("txtSueldo", "");
+            
 
         }
+    }
+
+    if(esNuevo == false){
+        objetoEmpleado.cedula = cmpCedula;
+        objetoEmpleado.nombre = cmpNombre;
+        objetoEmpleado.apellido = cmpApellido;
+        objetoEmpleado.sueldo = sueldoFloat;
+        modificarEmpleado(objetoEmpleado);
+        deshabilitarComponentes();
     }
     
 }
@@ -199,4 +196,54 @@ deshabilitarComponentes = function(){
     deshabilitarComponente("txtApellido");
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
+}
+
+ejecutarBusqueda = function(){
+    let valorEmpleado;
+    valorEmpleado = recuperarTexto("txtBusquedaCedula");
+    let empleado;
+    empleado = buscarEmpleado(valorEmpleado);
+    if(empleado == null){
+        alert("Empleado no existe");
+    }else{
+        mostrarTextoEnCaja("txtCedula", empleado.cedula);
+        mostrarTextoEnCaja("txtNombre", empleado.nombre);
+        mostrarTextoEnCaja("txtApellido", empleado.apellido);
+        mostrarTextoEnCaja("txtSueldo", empleado.sueldo);
+
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+        habilitarComponente("btnGuardar")
+        deshabilitarComponente("txtCedula");
+        esNuevo = false;
+    }
+}
+
+
+
+modificarEmpleado = function(empleado){
+    let buscar;
+        buscar = buscarEmpleado(empleado.cedula);
+        if(buscar != null){
+            buscar.nombre = empleado.nombre;
+            buscar.apellido = empleado.apellido;
+            buscar.sueldo = empleado.sueldo;
+            alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+            mostrarEmpleados();
+        }
+}
+
+
+buscarEmpleado = function(cedula){
+    let elementoCedula;
+    let cedulaEncontrada = null;
+    for(let i=0; i < empleados.length; i++){
+        elementoCedula = empleados[i];
+        if(elementoCedula.cedula == cedula){
+            cedulaEncontrada = elementoCedula;
+            break;
+        }
+    }
+    return cedulaEncontrada;
 }
