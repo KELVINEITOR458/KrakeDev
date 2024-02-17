@@ -252,3 +252,17 @@ limpiar = function(){
     mostrarTextoEnCaja("txtSueldo", "");
     esNuevo = false;
 }
+
+buscarPorRol = function(){
+    let buscarEmpleadoRol;
+    buscarEmpleadoRol = recuperarTexto("txtBusquedaCedulaRol");
+    let empleado;
+    empleado = buscarEmpleado(buscarEmpleadoRol);
+    if(empleado == null){
+        alert("Empleado no existe");
+    }else{
+        mostrarTexto("infoCedula", empleado.cedula);
+        mostrarTexto("infoNombre", empleado.nombre + " " + empleado.apellido);
+        mostrarTexto("infoSueldo", empleado.sueldo);
+    }
+}
