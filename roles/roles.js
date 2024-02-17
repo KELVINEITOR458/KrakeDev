@@ -9,6 +9,11 @@ mostrarOpcionEmpleado = function(){
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
     mostrarEmpleados();
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+
 }
 
 mostrarOpcionRol = function(){
@@ -43,4 +48,11 @@ mostrarEmpleados = function(){
     }
     contenidoTabla += "</table>";
     cmpTabla.innerHTML = contenidoTabla;
+}
+
+let esNuevo = false;
+
+ejecutarNuevo = function(){
+    esNuevo = true;
+    
 }
