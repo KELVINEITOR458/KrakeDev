@@ -9,11 +9,7 @@ mostrarOpcionEmpleado = function(){
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
     mostrarEmpleados();
-    deshabilitarComponente("txtCedula");
-    deshabilitarComponente("txtNombre");
-    deshabilitarComponente("txtApellido");
-    deshabilitarComponente("txtSueldo");
-    deshabilitarComponente("btnGuardar");
+    deshabilitarComponentes();
 
 }
 
@@ -149,18 +145,25 @@ guardar = function(){
         sueldoReal = false;
     }
 
+    objetoEmpleado = {};
 
     if(esNuevo == true && nombreReal == true && apellidoReal == true && cedulaReal == true && sueldoReal == true){
-        empleados.cedula = cmpCedula;
-        empleados.nombre = cmpNombre;
-        empleados.apellido = cmpApellido;
-        empleados.sueldo = sueldoFloat;
+        objetoEmpleado.cedula = cmpCedula;
+        objetoEmpleado.nombre = cmpNombre;
+        objetoEmpleado.apellido = cmpApellido;
+        objetoEmpleado.sueldo = sueldoFloat;
 
         let empleadoNuevo;
-        empleadoNuevo = agregarEmpleado(empleados);
+        empleadoNuevo = agregarEmpleado(objetoEmpleado);
         if(empleadoNuevo == true){
             alert("EMPLEADO GUARDADO CORRECTAMENTE");
             mostrarEmpleados();
+            deshabilitarComponentes();
+            mostrarTextoEnCaja("txtCedula", "");
+            mostrarTextoEnCaja("txtNombre", "");
+            mostrarTextoEnCaja("txtApellido", "");
+            mostrarTextoEnCaja("txtSueldo", "");
+
         }
     }
     
@@ -188,4 +191,12 @@ digito = function(caracter, txt){
                 return false;
             }
         }
+}
+
+deshabilitarComponentes = function(){
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
