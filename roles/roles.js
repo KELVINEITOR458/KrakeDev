@@ -17,6 +17,7 @@ mostrarOpcionRol = function(){
     mostrarComponente("divRol");
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
+    deshabilitarComponente("btnGuardarRol");
 }
 
 mostrarOpcionResumen = function(){
@@ -308,6 +309,75 @@ calcularRol = function(){
         let valorPagar;
         valorPagar = calcularValorAPagar(sueldo, aporte, descuento);
         mostrarTexto("infoPago", valorPagar);
+
+        habilitarComponente("btnGuardarRol");
     }
     
+}
+
+let roles = [];
+
+buscarRol = function(cedula){
+
+    let elementoRol;
+    let rolEncontrado = null;
+    for(let i=0; i < roles.length; i++){
+        elementoRol = roles[i];
+        if(elementoRol.cedula == cedula){
+            rolEncontrado = elementoRol;
+            break;
+        }
+    }
+    return rolEncontrado;
+    
+}
+
+agregarRol = function(rol){
+    let resultado;
+    resultado = buscarRol(rol.cedula);
+    if(resultado == null){
+        roles.push(rol);
+        return true;
+    }else{
+        alert("YA EXISTE EL EMPLEADO CON CEDULA: " + rol.cedula);
+        return false;
+    }
+}
+
+calcularAporteEmpleador = function(sueldo){
+    let valor;
+    valor = (sueldo * 11.15) / 100;
+    return valor;
+}
+
+guardarRol = function(){
+    let valorPagar;
+    let aporteEmpleado;
+    let nombre;
+    let cedula;
+    let sueldo;
+    valorPagar = recuperarFloatDiv("infoPago");
+    aporteEmpleado = recuperarFloatDiv("infoIESS");
+    nombre = recuperarTextoDiv("infoNombre");
+    cedula = recuperarTextoDiv("infoCedula");
+    sueldo = recuperarFloatDiv("infoSueldo");
+
+    let aporteEmpleador;
+    aporteEmpleador = calcularAporteEmpleador(sueldo);
+
+    let objetoRol = {};
+    objetoRol.cedula = cedula;
+    objetoRol.nombre = nombre;
+    objetoRol.sueldo = sueldo;
+    objetoRol.valorAPagar = valorPagar;
+    objetoRol.valorEmpleado = aporteEmpleado;
+    objetoRol.valorEmpleador = aporteEmpleador;
+
+    let agregar;
+    agregar = agregarRol(objetoRol);
+
+    if(agregar == true){
+        alert("EXITO");
+        deshabilitarComponente("btnGuardarRol");
+    }
 }
