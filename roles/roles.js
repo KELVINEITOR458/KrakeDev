@@ -275,7 +275,7 @@ buscarPorRol = function(){
 
 calcularAporteEmpleado = function(sueldo){
     let sueldoPorciento;
-    sueldoPorciento = (sueldo * 9.45) % 100;
+    sueldoPorciento = (sueldo * 9.45) / 100;
     return sueldoPorciento;
 }
 
