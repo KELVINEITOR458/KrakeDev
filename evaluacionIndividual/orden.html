@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="orden.js"></script>
+    <script src="utilitariosPro.js"></script>
+    <style>
+        table{
+            border: 2px solid rgb(7, 107, 20);
+        }
+        table td{
+            border: 1px solid rgb(0, 112, 43);
+        }
+        table tr:nth-child(odd){
+            background-color: rgb(0, 189, 41);
+        }
+        table tr:nth-child(even){
+            background-color: rgb(59, 233, 97);
+        }
+
+    </style>
+</head>
+
+<body onload="mostrarPersonas();">
+    <div class="tituloCampo">
+        NOMBRE
+    </div>
+    <div>
+        <input type="text" class="cajaTexto" id="txtNombre" />
+        <div class="error" id="lblErrorNombre"></div>
+    </div>
+
+    <div class="tituloCampo">
+        EDAD
+    </div>
+    <div>
+        <input type="text" class="cajaTexto" id="txtEdad" />
+        <div class="error" id="lblErrorEdad"></div>
+    </div>
+    <div class="btnGuardar">
+        <input type="button" value="GUARDAR" onclick="agregarPersona();">
+    </div>
+    <div class="btnEncontrarMayor">
+        <input type="button" value="ENCONTRAR MAYOR" onclick="mostrarMayor();">
+    </div>
+    <div class="btnEncontrarMenor">
+        <input type="button" value="ENCONTRAR MENOR" onclick="mostrarMenor();">
+    </div>
+    <br>
+    <br>
+    <div id="tablaPersonas"></div>
+    <br>
+    <br>
+    <h3>Mayor</h3>
+    <h4 id="mayor"></h4>
+    <h3>Menor</h3>
+    <h4 id="menor"></h4>
+</body>
+
+</html>
